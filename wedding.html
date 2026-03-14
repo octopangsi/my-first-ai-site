@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We're Getting Married</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --champagne: #f7e7ce;
+      --champagne-light: #faf4eb;
+      --champagne-dark: #e8d4b8;
+      --gold: #c9a962;
+      --gold-soft: #d4b896;
+      --blush: #e8d5d0;
+      --ivory: #fffff5;
+      --text-warm: #5c4a3a;
+      --text-soft: #7d6b5c;
+      --shadow-soft: rgba(201, 169, 98, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      color: var(--text-warm);
+      background: var(--champagne-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .serif {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: linear-gradient(180deg, var(--ivory) 0%, var(--champagne) 50%, var(--champagne-light) 100%);
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 50% 30%, var(--blush) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .subtitle {
+      font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .hero .names {
+      font-size: clamp(2.2rem, 8vw, 4.5rem);
+      font-weight: 600;
+      color: var(--text-warm);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero .and {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--gold-soft);
+      margin: 0.5rem 0;
+    }
+
+    .hero .date {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--text-soft);
+      margin-top: 1.5rem;
+      letter-spacing: 0.15em;
+    }
+
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 2rem auto;
+    }
+
+    /* Section common */
+    section {
+      padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 500;
+      color: var(--text-warm);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    section p {
+      color: var(--text-soft);
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
+      text-align: center;
+    }
+
+    .invitation {
+      background: var(--ivory);
+      box-shadow: 0 8px 32px var(--shadow-soft);
+    }
+
+    .details-card {
+      background: linear-gradient(135deg, var(--champagne-light) 0%, var(--champagne) 100%);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid var(--champagne-dark);
+    }
+
+    .details-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .details-card p {
+      text-align: left;
+      margin: 0;
+      color: var(--text-warm);
+    }
+
+    .rsvp-cta {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.9rem 2.5rem;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-soft) 100%);
+      color: var(--ivory);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px var(--shadow-soft);
+    }
+
+    .rsvp-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px var(--shadow-soft);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--text-soft);
+      font-size: 0.85rem;
+    }
+
+    .footer .heart {
+      color: var(--gold);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 100svh;
+      }
+      .details-card {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero .subtitle {
+        letter-spacing: 0.25em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div class="hero-content">
+        <p class="subtitle">Together with their families</p>
+        <h1 class="names serif">Bride & Groom</h1>
+        <p class="and serif">and</p>
+        <p class="subtitle">Request the pleasure of your company</p>
+        <div class="divider"></div>
+        <p class="date">Saturday, the fifteenth of June</p>
+        <p class="date">Two thousand twenty-six</p>
+      </div>
+    </header>
+
+    <section class="invitation">
+      <h2 class="serif">Celebrate With Us</h2>
+      <div class="divider"></div>
+      <p>
+        We're so excited to share our special day with you. Your presence is the greatest gift we could ask for.
+      </p>
+
+      <div class="details-card">
+        <h3>Ceremony & Reception</h3>
+        <p><strong>Venue Name</strong></p>
+        <p>123 Garden Lane</p>
+        <p>City, State</p>
+        <p style="margin-top: 1rem;">Ceremony at 4:00 in the afternoon</p>
+        <p>Reception to follow</p>
+      </div>
+
+      <p>
+        <a href="mailto:rsvp@example.com" class="rsvp-cta">R.S.V.P.</a>
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p>With love and gratitude <span class="heart">♥</span></p>
+    </footer>
+  </main>
+</body>
+</html>
